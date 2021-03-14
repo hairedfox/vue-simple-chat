@@ -6,17 +6,22 @@ import VueRouter from "vue-router";
 
 import Messages from "./components/Messages";
 import NewMessage from "./components/NewMessage";
+import Message from "./components/Message";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
+    path: "*",
     component: Messages
   },
   {
     path: "/new-message",
     component: NewMessage
+  },
+  {
+    path: "/messages/:id",
+    component: Message
   }
 ];
 

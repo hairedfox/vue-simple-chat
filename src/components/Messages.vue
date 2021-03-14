@@ -10,7 +10,7 @@
         <v-list-item
           v-for="(message, idx) in $store.state.messages"
           :key="idx"
-          @click.prevent=""
+          :to="`messages/${idx}`"
         >
           <v-list-item-content>
             <v-list-item-title v-text="message"></v-list-item-title>
