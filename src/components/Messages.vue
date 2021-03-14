@@ -24,9 +24,6 @@
 <script>
 export default {
   name: "Messages",
-  data() {
-    return {};
-  },
   async created() {
     this.$store.dispatch("getMessages");
   }

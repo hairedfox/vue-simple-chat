@@ -18,8 +18,8 @@ export default new Vuex.Store({
   },
   actions: {
     async getMessages({ commit }) {
-      let res = await axios.get("http://localhost:3000/messages");
-      commit("updateMessages", res.data.messages || []);
+      let messages = (await axios.get("http://localhost:3000/messages")).data;
+      commit("updateMessages", messages);
     },
     async newMessage({ commit }, messageBody) {
       let res = await axios.post("http://localhost:3000/messages", {

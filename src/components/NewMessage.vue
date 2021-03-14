@@ -37,7 +37,7 @@ export default {
   methods: {
     async submit() {
       try {
-        this.$store.dispatch("newMessage", this.messageBody);
+        await this.$store.dispatch("newMessage", this.messageBody);
         this.messageBody = "";
       } catch (error) {
         console.error(error);
