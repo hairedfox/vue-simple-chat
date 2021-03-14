@@ -27,8 +27,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "NewMessage",
   data() {
@@ -39,10 +37,8 @@ export default {
   methods: {
     async submit() {
       try {
-        let res = await axios.post("http://localhost:3000/messages", {
-          message: this.messageBody
-        });
-        this.$root.$emit("newMessage", res.data.message);
+        this.$store.dispatch("newMessage", this.messageBody);
+        this.messageBody = "";
       } catch (error) {
         console.error(error);
       }

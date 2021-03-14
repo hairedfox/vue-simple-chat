@@ -8,7 +8,7 @@
       </v-toolbar>
       <v-list>
         <v-list-item
-          v-for="(message, idx) in messages"
+          v-for="(message, idx) in $store.state.messages"
           :key="idx"
           @click.prevent=""
         >
@@ -22,20 +22,13 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: "Messages",
   data() {
-    return {
-      messages: []
-    };
+    return {};
   },
   async created() {
-    this.$root.$on("newMessage", message => {
-      this.messages.push(message);
-    });
-    this.messages = (await axios.get("http://localhost:3000/messages")).data;
+    this.$store.dispatch("getMessages");
   }
 };
 </script>
