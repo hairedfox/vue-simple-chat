@@ -13,7 +13,9 @@
           :to="`messages/${idx}`"
         >
           <v-list-item-content>
-            <v-list-item-title v-text="message"></v-list-item-title>
+            <v-list-item-title
+              v-text="message.user + ': ' + message.text"
+            ></v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
