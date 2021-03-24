@@ -6,7 +6,9 @@
     <v-btn text light class="ml-2" v-if="!$store.state.token" to="/register"
       >Register</v-btn
     >
-    <v-btn text light class="ml-2" v-if="!$store.state.token">Login</v-btn>
+    <v-btn text light class="ml-2" v-if="!$store.state.token" to="/login"
+      >Login</v-btn
+    >
     <v-btn
       text
       light
